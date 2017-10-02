@@ -8,7 +8,7 @@ const keyCodes = {
 
 let currentScreen = 0;
 
-function changeScreen(screenNumber) {
+const changeScreen = (screenNumber) => {
   if (screenNumber < templates.length && screenNumber >= 0) {
     mainContainer.innerHTML = templates[screenNumber].innerHTML;
     currentScreen = screenNumber;
