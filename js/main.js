@@ -1,6 +1,11 @@
 const templates = Array.from(document.querySelectorAll(`template`));
 const mainContainer = document.querySelector(`main.central`);
 const loadingScreen = mainContainer.innerHTML;
+const keyCodes = {
+  leftArrow: 37,
+  rightArrow: 39
+};
+
 let currentScreen = 0;
 
 function changeScreen(screenNumber) {
@@ -10,14 +15,14 @@ function changeScreen(screenNumber) {
   }
 }
 
-document.addEventListener(`keydown`, function (e) {
+document.addEventListener(`keydown`, (e) => {
   if (e.altKey) {
     switch (e.keyCode) {
-      case 37:
+      case keyCodes.leftArrow:
         e.preventDefault();
         changeScreen(currentScreen - 1);
         break;
-      case 39:
+      case keyCodes.rightArrow:
         e.preventDefault();
         changeScreen(currentScreen + 1);
         break;
