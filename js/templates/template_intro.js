@@ -1,6 +1,8 @@
-import getElement from './getElement';
+import getElement from '../utilities/getElement';
+import changeScreen from '../utilities/setScreen';
+import templateGreeting from './template_greeting';
 
-export const templateIntro = getElement(`<div id="main" class="central__content">
+const templateIntro = getElement(`<div id="main" class="central__content">
     <div id="intro" class="intro">
       <h1 class="intro__asterisk">*</h1>
       <p class="intro__motto"><sup>*</sup> Это не фото. Это рисунок маслом нидерландского художника-фотореалиста Tjalf Sparnaay.</p>
@@ -16,3 +18,9 @@ export const templateIntro = getElement(`<div id="main" class="central__content"
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+templateIntro.querySelector(`.intro__asterisk`).addEventListener(`click`, () => {
+  changeScreen(templateGreeting);
+});
+
+export default templateIntro;

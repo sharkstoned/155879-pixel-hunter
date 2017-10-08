@@ -1,6 +1,4 @@
-import changeScreen from './changeScreen';
-import {templateIntro} from './template_intro';
+import setScreen from './utilities/setScreen';
+import templateIntro from './templates/template_intro';
 
-changeScreen(templateIntro);
-
-
+setScreen(templateIntro);

@@ -1,4 +1,4 @@
-import getElement from 'getElement';
+import getElement from 'js/utilities/getElement';
 
 const templateGame2 = getElement(`<header class="header">
     <div class="header__back">

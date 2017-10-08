@@ -1,6 +1,8 @@
-import getElement from 'getElement';
+import getElement from '../utilities/getElement';
+import changeScreen from '../utilities/setScreen';
+import templateGame1 from './template_game-1';
 
-export default const templateRules = getElement(`<header class="header">
+const templateRules = getElement(`<header class="header">
     <div class="header__back">
       <button class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -34,3 +36,15 @@ export default const templateRules = getElement(`<header class="header">
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+let submitButton = templateRules.querySelector(`.rules__button`);
+
+templateRules.querySelector(`.rules__input`).addEventListener(`input`, (e) => {
+  submitButton.disabled = e.target.value === ``;
+});
+
+submitButton.addEventListener(`click`, () => {
+  changeScreen(templateGame1);
+});
+
+export default templateRules;

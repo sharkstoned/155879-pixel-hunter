@@ -1,4 +1,6 @@
-import getElement from 'getElement';
+import getElement from '../utilities/getElement';
+import changeScreen from '../utilities/setScreen';
+import templateRules from './template_rules';
 
 const templateGreeting = getElement(`<div class="greeting central--blur">
     <div class="greeting__logo"><img src="img/logo_big.png" width="201" height="89" alt="Pixel Hunter"></div>
@@ -23,5 +25,9 @@ const templateGreeting = getElement(`<div class="greeting central--blur">
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+templateGreeting.querySelector(`.greeting__continue`).addEventListener(`click`, () => {
+  changeScreen(templateRules);
+});
 
 export default templateGreeting;
