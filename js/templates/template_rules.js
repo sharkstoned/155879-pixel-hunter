@@ -1,6 +1,7 @@
 import getElement from '../utilities/getElement';
-import changeScreen from '../utilities/setScreen';
+import setScreen from '../utilities/setScreen';
 import templateGame1 from './template_game-1';
+import templateGreeting from './template_greeting';
 
 const templateRules = getElement(`<header class="header">
     <div class="header__back">
@@ -44,7 +45,11 @@ templateRules.querySelector(`.rules__input`).addEventListener(`input`, (e) => {
 });
 
 submitButton.addEventListener(`click`, () => {
-  changeScreen(templateGame1);
+  setScreen(templateGame1);
+});
+
+templateRules.querySelector(`button.back`).addEventListener(`click`, () => {
+  setScreen(templateGreeting);
 });
 
 export default templateRules;

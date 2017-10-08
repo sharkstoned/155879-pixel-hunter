@@ -1,4 +1,6 @@
-import getElement from 'js/utilities/getElement';
+import getElement from '../utilities/getElement';
+import setScreen from '../utilities/setScreen';
+import templateGreeting from './template_greeting';
 
 const templateStats = getElement(`<header class="header">
     <div class="header__back">
@@ -118,5 +120,9 @@ const templateStats = getElement(`<header class="header">
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+templateStats.querySelector(`button.back`).addEventListener(`click`, () => {
+  setScreen(templateGreeting);
+});
 
 export default templateStats;

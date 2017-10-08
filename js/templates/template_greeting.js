@@ -1,5 +1,5 @@
 import getElement from '../utilities/getElement';
-import changeScreen from '../utilities/setScreen';
+import setScreen from '../utilities/setScreen';
 import templateRules from './template_rules';
 
 const templateGreeting = getElement(`<div class="greeting central--blur">
@@ -27,7 +27,7 @@ const templateGreeting = getElement(`<div class="greeting central--blur">
   </footer>`);
 
 templateGreeting.querySelector(`.greeting__continue`).addEventListener(`click`, () => {
-  changeScreen(templateRules);
+  setScreen(templateRules);
 });
 
 export default templateGreeting;

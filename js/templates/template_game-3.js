@@ -1,4 +1,7 @@
-import getElement from 'js/utilities/getElement';
+import getElement from '../utilities/getElement';
+import setScreen from '../utilities/setScreen';
+import templateStats from './template_stats';
+import templateGreeting from './template_greeting';
 
 const templateGame3 = getElement(`<header class="header">
     <div class="header__back">
@@ -52,5 +55,15 @@ const templateGame3 = getElement(`<header class="header">
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+templateGame3.querySelector(`.game__content`).addEventListener(`click`, (e) => {
+  if (e.target.classList.contains(`game__option`)) {
+    setScreen(templateStats);
+  }
+});
+
+templateGame3.querySelector(`button.back`).addEventListener(`click`, () => {
+  setScreen(templateGreeting);
+});
 
 export default templateGame3;

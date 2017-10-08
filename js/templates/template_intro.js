@@ -1,5 +1,5 @@
 import getElement from '../utilities/getElement';
-import changeScreen from '../utilities/setScreen';
+import setScreen from '../utilities/setScreen';
 import templateGreeting from './template_greeting';
 
 const templateIntro = getElement(`<div id="main" class="central__content">
@@ -20,7 +20,7 @@ const templateIntro = getElement(`<div id="main" class="central__content">
   </footer>`);
 
 templateIntro.querySelector(`.intro__asterisk`).addEventListener(`click`, () => {
-  changeScreen(templateGreeting);
+  setScreen(templateGreeting);
 });
 
 export default templateIntro;

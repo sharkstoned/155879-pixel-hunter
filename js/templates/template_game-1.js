@@ -1,4 +1,7 @@
 import getElement from '../utilities/getElement';
+import setScreen from '../utilities/setScreen';
+import templateGame2 from './template_game-2';
+import templateGreeting from './template_greeting';
 
 const templateGame1 = getElement(`<header class="header">
     <div class="header__back">
@@ -65,5 +68,25 @@ const templateGame1 = getElement(`<header class="header">
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+let selectedOptions = {};
+
+templateGame1.querySelector(`.game__content`).addEventListener(`click`, (e) => {
+  switch (e.target.name) {
+    case `question1`:
+      selectedOptions.question1 = true;
+      break;
+    case `question2`:
+      selectedOptions.question2 = true;
+      break;
+  }
+  if (selectedOptions.question1 && selectedOptions.question2) {
+    setScreen(templateGame2);
+  }
+});
+
+templateGame1.querySelector(`button.back`).addEventListener(`click`, () => {
+  setScreen(templateGreeting);
+});
 
 export default templateGame1;
